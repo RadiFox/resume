@@ -1,0 +1,186 @@
+%-------------------------
+% Resume in Latex
+% Author : Sebastian Biernat
+% License : MIT
+%------------------------
+
+\documentclass[a4paper]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+% Just in case someone needs a heading that does not need to be in a list
+\newcommand{\resumeHeading}[4]{
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{https://resume.radoxapp.com/}{\Large Sebastian Biernat}} & Email : \href{mailto:sebastian.biernat@icloud.com}{sebastian.biernat@icloud.com}\\
+  \href{https://resume.radoxapp.com/}{https://www.resume.radoxapp.com} & Mobile : \href{tel:+48794777212}{+48-794-777-212} \\
+\end{tabular*}
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Social Academy of Science}{Warsaw, Poland}
+      {Bachelor of Engineering in Computer Science}{Oct. 2022 -- Present}
+    \resumeSubheading
+      {Technical High School for Computer Science}{Bochnia, Poland}
+      {High School Diploma in IT technician}{Sep. 2016 -- Apr. 2020}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Nivalit}{Cracov, Poland}
+      {Junior DevOps Engineer}{April 2022 - Present}
+      \resumeSubHeadingListStart
+        \item{
+          \textbf{Roles and Responsibilities}{: Cloud Architect, Support for client's, On-call, Cloud Enginner, Cloud Security, CI/CD Pipelines, Application monitoring, writing specification documents, building and setting up new development tools and infrastructure, identifying technical problems and developing software updates and fixes}
+      }
+      \resumeSubHeadingListEnd
+      \resumeItemListStart
+        \resumeItem{Terraform with Atlantis}
+          {The infrastructure was previously created manually through the AWS UI, resulting in challenges with tracking changes and maintaining documentation for the rest of the team. To address these issues, I authored reusable Terraform code that could be adapted for other projects by adjusting variables. In addition, I leveraged Atlantis to facilitate repository configuration, providing the team with rapid deployment of production clones and infrastructure for new projects, as well as increased visibility into infrastructure changes.}
+        \resumeItem{Gitlab/Bitbucket}
+          {Gitlab has changed its pricing policy, so to save costs, I migrated my repositories to Bitbucket and rewrote the CI/CD from scratch, learning the Bitbucket syntax. This saved me 21 USD per user, as the cost was reduced to 3 USD instead of 24 USD per user.}
+        \resumeItem{Packer}
+          {Some EC2 instances required specific programs and files from the repository. To ensure consistent configuration across instances and save time, I leveraged Packer to create AMI images that included the necessary software and files. This approach facilitated automated provisioning of EC2 instances and improved overall efficiency.}
+        \resumeItem{Gatling}
+          {Previously, there was a lack of clarity about the nature and timing of the server load generated by the application. To address this issue, I created representative application usage scenarios and used Gatling to run load tests. The resulting analysis provided valuable insight into the best parameters to monitor and set them in an autoscaling policy.}
+        \resumeItem{AWS ECS/EKS}
+          {EC2 instances with Docker Swarm did not offer a straightforward means of autoscaling applications. To address this limitation, I migrated the application to AWS ECS, and I am currently in the process of transitioning to AWS EKS. This move has reduced the cost of application deployment by leveraging the serverless Fargate service, while also improving reliability and simplifying deployment processes.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Lock-tel}{Bochnia, Poland}
+      {IT Specialist}{Jan 2022 - Apr 2022}
+      \resumeSubHeadingListStart
+      \item{
+        \textbf{Roles and Responsibilities}{: Creating Automation with Python, Windows Server managment, Fixing Hardware/Software issuess, Setting up: Network inside company, Linux server's with Samba, Windows SQL Server}
+      }
+    \resumeSubHeadingListEnd
+      \resumeItemListStart
+        \resumeItem{Python}
+          {Employees were performing a significant amount of manual work by entering smartphone models into Amazon's Excel templates for auction listings. To streamline this process, I developed a Python script that automatically populated the templates and compressed the corresponding product images. This approach enabled auctions to be created in a matter of minutes instead of an entire day}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+\section{IT Projects}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Vivelio}
+      {The innovative questionnaire platform based on Graph Al technology. The multivectoral assessment enables not only analysis of answers but also non-verbal signals: body behavior and reaction and validity of answers. The system is intended as scientific research tool, especially in fields of psychology, sociology or medical studies.}
+    \resumeSubItem{Exfluency}
+      {Exfluency combines the power of blockchain, AI and hybrid intelligence to create a ground-breaking language marketplace.}
+    \resumeSubItem{GRAPH AI}
+      {GraphAI is an innovative approach to artificial intelligence that combines data storage with data analysis. With scientifically tested graph inference methods, GraphAI can make predictions from incomplete data with astonishing efficiency and accuracy.}
+  \resumeSubHeadingListEnd
+
+%
+%--------QUALIFICATIONS SKILLS------------
+\section{Qualifications}
+  \resumeSubHeadingListStart
+    \item{
+      \textbf{Qualifications}{: AWS Certified Solutions Architect Associate, E.14 Web development and database administration, E.13 Local area network design and network administration, E.12 Assembly and operation}
+    }
+  \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+%--------PROGRAMMING SKILLS------------
+\section{Programming Skills}
+  \resumeSubHeadingListStart
+    \item{
+      \textbf{Technologies}{: AWS, Python, Bash, Ubuntu, Postgresql, Ansible, Bitbucket, Gitlab, Gatling, Terraform, Atlantis, AKS, Kubernetes, Windows Server, Jira, Confluence}
+    }
+  \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
